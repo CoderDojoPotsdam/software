@@ -1,0 +1,21 @@
+
+# programming languages
+arduino	
+idle-python2.7
+idle-python3.4
+openjdk-7-jre
+python3.4
+scratch
+squeak-vm
+
+# firefox
+firefox
+flashplugin-installer
+
+# editors
+vim
+inkscape
+
+# tools 
+synergy
+
