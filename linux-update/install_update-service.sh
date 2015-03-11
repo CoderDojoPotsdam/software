@@ -59,7 +59,8 @@ do
     echo
     ssh-keygen -y -f ~/.ssh/id_rsa
     echo 
-    echo add the public key to your github account https://github.com/settings/ssh and say yes
+    echo add the public key to your github account https://github.com/settings/ssh and
+    read -n1 -r -p "press any key to continue..." key
     echo
   fi
 done
