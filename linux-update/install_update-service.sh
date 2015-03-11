@@ -40,3 +40,5 @@ git config --global push.default simple
 git config --local --unset remote.origin.url
 git config --local remote.origin.url git@github.com:CoderDojoPotsdam/software.git
 
+touch update.sh.log
+touch update_update.sh.log
