@@ -36,6 +36,10 @@ apt-get -y -qq dist-upgrade
 apt-get -y -qq autoremove
 apt-get -y -qq autoclean
 
+# install the software packages again
+echo ----- install software again -----
+cd /home/coderdojo/software/linux-update
+./install_software.sh
 
 
 
