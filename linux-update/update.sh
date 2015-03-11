@@ -25,7 +25,8 @@ fi
 
 # install the software packages
 echo ----- install software -----
-/home/coderdojo/software/linux-update/install_software.sh
+cd /home/coderdojo/software/linux-update
+./install_software.sh
 
 # update the system
 echo ----- update the system -----
