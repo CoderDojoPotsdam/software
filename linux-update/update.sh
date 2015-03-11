@@ -9,9 +9,7 @@ echo
 # we run as super user
 
 # configure global settings
-git config --global user.email "coderdojopotsdam-discuss@googlegroups.com"
-git config --global user.name "Coder Dojo Potsdam - `hostname`"
-git config --global push.default simple
+
 
 # assuming that the user name is coderdojo
 # create and update git repositories
@@ -19,28 +17,13 @@ if [ -d /home/coderdojo ]
 then
   cd /home/coderdojo
   # update the organize repository
-  echo ----- organize -----
-  if [ -d organize ]
-  then
-    cd organize
-    ssh-agent bash -c 'ssh-add /home/coderdojo/.ssh/id_rsa; git pull --no-commit'
-    cd ..
-  else
-    ssh-agent bash -c 'ssh-add /home/coderdojo/.ssh/id_rsa; git clone git@github.com:CoderDojoPotsdam/organize.git'
-  fi 
+  ./update_git_repository.sh git@github.com:CoderDojoPotsdam/organize.git organize
   # update the projects repository
-  echo ----- projects -----
-  if [ -d projects ]
-  then
-    cd projects
-    ssh-agent bash -c 'ssh-add /home/coderdojo/.ssh/id_rsa; git pull'
-    cd ..
-  else
-    ssh-agent bash -c 'ssh-add /home/coderdojo/.ssh/id_rsa; git clone git@github.com:CoderDojoPotsdam/projects.git'
-  fi 
+  ./update_git_repository.sh git@github.com:CoderDojoPotsdam/projects.git projects
   cd projects
   git commit -am"auto commit on `hostname`" &&  ssh-agent bash -c 'ssh-add /home/coderdojo/.ssh/id_rsa; git push'
   cd ..
+  chown -R coderdojo projects
 fi
 
 
