@@ -10,6 +10,9 @@ echo
 apt-get -y install git
 
 # add github to the known hosts
+# http://stackoverflow.com/questions/13363553/git-error-host-key-verification-failed-when-connecting-to-remote-repository
+ssh-keygen -R domain.com
+# http://serverfault.com/questions/132970/can-i-automatically-add-a-new-host-to-known-hosts
 ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 ssh-keyscan -H github.com >> /root/.ssh/known_hosts
 
