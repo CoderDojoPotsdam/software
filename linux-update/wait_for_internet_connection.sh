@@ -16,4 +16,18 @@ do
   # http://stackoverflow.com/questions/1406644/checking-internet-connection-with-command-line-php-on-linux
   routesToTheInternet=`/sbin/route -n | grep -c '^0\.0\.0\.0'`
 
+  if [ $routesToTheInternet -eq 0 ]
+  then
+    # don't check github
+    sleep 1
+  else 
+    # check explicitely for github
+    if (cd /tmp && wget --quiet https://github.com)
+    then
+      routesToTheInternet=1
+    else
+      routesToTheInternet=0
+    fi
+  fi
+
 done
