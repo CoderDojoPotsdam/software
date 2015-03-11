@@ -14,14 +14,18 @@ if [ -d /home/coderdojo ]
 then
   cd /home/coderdojo
   # update the organize repository
-  ./update_git_repository.sh git@github.com:CoderDojoPotsdam/organize.git organize
+  /home/coderdojo/software/linux-update/update_git_repository.sh git@github.com:CoderDojoPotsdam/organize.git organize
   # update the projects repository
-  ./update_git_repository.sh git@github.com:CoderDojoPotsdam/projects.git projects
+  /home/coderdojo/software/linux-update/update_git_repository.sh git@github.com:CoderDojoPotsdam/projects.git projects
   cd projects
   git commit -am"auto commit on `hostname`" &&  ssh-agent bash -c 'ssh-add /home/coderdojo/.ssh/id_rsa; git push'
   cd ..
   chown -R coderdojo projects
 fi
+
+# install the software packages
+echo ----- install software -----
+./install_software.sh
 
 # update the system
 echo ----- update the system -----
@@ -31,9 +35,6 @@ apt-get -y -qq dist-upgrade
 apt-get -y -qq autoremove
 apt-get -y -qq autoclean
 
-# install the software packages
-echo ----- install software -----
-./install_software.sh
 
 
 
