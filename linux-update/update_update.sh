@@ -11,6 +11,7 @@ apt-get -y install git
 
 # add github to the known hosts
 ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+ssh-keyscan -H github.com >> /root/.ssh/known_hosts
 
 # update the repository
 
