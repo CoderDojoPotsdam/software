@@ -1,5 +1,7 @@
 #!/bin/sh
 
+cd /home/coderdojo/software/linux-update
+
 sudo ln -s --backup `pwd`/coder-dojo-potsdam-update-service.sh /etc/rc.local
 
 # show or generate ssh key
@@ -28,3 +30,6 @@ else
   echo 
   echo add the public key to your github account https://github.com/settings/ssh
 fi
+
+git config --global user.email "coderdojopotsdam-discuss@googlegroups.com"
+git config --global user.name "Coder Dojo Potsdam - `hostname`"
