@@ -11,7 +11,7 @@ apt-get -y install git
 
 # update the repository
 
-cd ~
+cd /home/coderdojo
 
 # test if directory exists
 # http://www.cyberciti.biz/tips/find-out-if-directory-exists.html
