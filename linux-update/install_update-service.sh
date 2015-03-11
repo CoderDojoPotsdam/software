@@ -60,7 +60,8 @@ do
     ssh-keygen -y -f ~/.ssh/id_rsa
     echo 
     echo add the public key to your github account https://github.com/settings/ssh and
-    read -n1 -r -p "press any key to continue..." key
+    # http://stackoverflow.com/questions/92802/what-is-the-linux-equivalent-to-dos-pause
+    read -r -p "press ENTER to continue..." key
     echo
   fi
 done
