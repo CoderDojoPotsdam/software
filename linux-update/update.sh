@@ -34,6 +34,9 @@ then
   else
     ssh-agent bash -c 'ssh-add /home/coderdojo/.ssh/id_rsa; git clone git@github.com:CoderDojoPotsdam/projects.git'
   fi 
+  cd projects
+  git commit -am"auto commit on `hostname`" &&  ssh-agent bash -c 'ssh-add /home/coderdojo/.ssh/id_rsa; git push'
+  cd ..
 fi
 
 
