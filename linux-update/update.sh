@@ -8,9 +8,6 @@ echo
 # we can assume an internet connection
 # we run as super user
 
-# configure global settings
-
-
 # assuming that the user name is coderdojo
 # create and update git repositories
 if [ -d /home/coderdojo ]
@@ -25,8 +22,6 @@ then
   cd ..
   chown -R coderdojo projects
 fi
-
-
 
 # update the system
 echo ----- update the system -----
