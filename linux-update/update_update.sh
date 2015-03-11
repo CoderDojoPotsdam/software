@@ -2,7 +2,7 @@
 
 echo -----------------------------------------------------------------
 date
-git rev-list --parents HEAD
+git log --pretty=oneline -1
 echo
 
 # install git
