@@ -8,6 +8,10 @@ echo
 # we can assume an internet connection
 # we run as super user
 
+# configure global settings
+git config --global user.email "coderdojopotsdam-discuss@googlegroups.com"
+git config --global user.name "Coder Dojo Potsdam - `hostname`"
+git config --global push.default simple
 
 # assuming that the user name is coderdojo
 # create and update git repositories
