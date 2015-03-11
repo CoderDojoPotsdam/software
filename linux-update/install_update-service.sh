@@ -31,5 +31,12 @@ else
   echo add the public key to your github account https://github.com/settings/ssh
 fi
 
+# configure global settings
 git config --global user.email "coderdojopotsdam-discuss@googlegroups.com"
 git config --global user.name "Coder Dojo Potsdam - `hostname`"
+git config --global push.default simple
+
+# configure repository
+git config --local --unset remote.origin.url
+git config --local remote.origin.url git@github.com:CoderDojoPotsdam/software.git
+
