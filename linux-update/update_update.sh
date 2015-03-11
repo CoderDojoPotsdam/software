@@ -25,6 +25,8 @@ else
   cd software/
 fi
 
+chown -R coderdojo .
+
 cd linux-update
 
 rm /etc/rc.local
