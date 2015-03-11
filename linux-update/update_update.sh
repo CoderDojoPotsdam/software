@@ -9,6 +9,9 @@ echo
 
 apt-get -y install git
 
+# add github to the known hosts
+ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+
 # update the repository
 
 cd /home/coderdojo

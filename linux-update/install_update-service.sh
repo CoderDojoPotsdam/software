@@ -40,6 +40,9 @@ else
   
 fi
 
+# add github to the known hosts
+ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+
 # try to connect to github
 can_connect_to_github=0
 while [ $can_connect_to_github -ne 1 ]
