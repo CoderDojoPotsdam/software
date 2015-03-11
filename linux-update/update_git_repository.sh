@@ -9,10 +9,10 @@ echo ----- $folder_name -----
 if [ -d $folder_name ]
 then
   cd $folder_name
-  ssh-agent bash -c 'ssh-add /home/coderdojo/.ssh/id_rsa; git pull'
+  ssh-agent bash -c "ssh-add /home/coderdojo/.ssh/id_rsa; git pull"
   cd ..
 else
-  ssh-agent bash -c 'ssh-add /home/coderdojo/.ssh/id_rsa; git clone $git_url'
+  ssh-agent bash -c "ssh-add /home/coderdojo/.ssh/id_rsa; git clone ${git_url}"
 fi 
 
 # configure repository
