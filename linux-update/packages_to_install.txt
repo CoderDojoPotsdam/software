@@ -4,9 +4,11 @@ arduino
 idle-python2.7
 idle-python3.4
 openjdk-7-jre
-python3.4
+python3
 scratch
 squeak-vm
+python-pip
+python3-pip
 
 # firefox
 firefox
