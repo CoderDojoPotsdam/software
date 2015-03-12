@@ -1,24 +1,33 @@
 
-# programming languages
+####### programming languages #######
+# arduino
 arduino	
+
+# python
 idle-python2.7
 idle-python3.4
-openjdk-7-jre
+python
 python3
-scratch
-squeak-vm
 python-pip
 python3-pip
 
+#java
+openjdk-7-jre
+
+#scratch
+scratch
+squeak-vm
+
+####### browsers #######
 # firefox
 firefox
 flashplugin-installer
 
-# editors
+####### editors #######
 vim
 inkscape
 blender
 
-# tools 
+####### tools #######
 synergy
 
