@@ -10,6 +10,8 @@ echo
 
 # assuming that the user name is coderdojo
 # create and update git repositories
+echo ----- update repositories -----
+echo -n updating repositories >> status.log
 if [ -d /home/coderdojo ]
 then
   cd /home/coderdojo
@@ -24,26 +26,40 @@ then
     cd ..
     chown -R coderdojo projects
   fi
+  echo failed >> status.log
+else
+  echo done >> status.log
 fi
+
 
 # install the software packages
 echo ----- install software -----
+echo -n installing software >> status.log
+
 cd /home/coderdojo/software/linux-update
 ./install_software.sh
 
+echo done >> status.log
+
 # update the system
 echo ----- update the system -----
+echo -n updating the system >> status.log
 # http://stackoverflow.com/questions/3316677/apt-get-update-dist-upgrade-autoremove-autoclean-in-a-single-sudo-command
 apt-get -y -qq update
 apt-get -y -qq dist-upgrade
 apt-get -y -qq autoremove
 apt-get -y -qq autoclean
 
+echo done >> status.log
+
 # install the software packages again
 echo ----- install software again -----
+echo -n installing software again >> status.log
+
 cd /home/coderdojo/software/linux-update
 ./install_software.sh
 
+echo done >> status.log
 
 
 

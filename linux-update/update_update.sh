@@ -6,6 +6,7 @@ git log --pretty=oneline -1
 echo
 
 # install git
+echo -n installing git... >> status.log
 
 apt-get -y install git
 
@@ -16,7 +17,11 @@ ssh-keygen -R domain.com
 ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 ssh-keyscan -H github.com >> /root/.ssh/known_hosts
 
+echo done >> status.log
+
 # update the repository
+
+echo -n updating the software repository >> status.log
 
 cd /home/coderdojo
 
@@ -35,6 +40,8 @@ fi
 chown -R coderdojo .
 
 cd linux-update
+
+echo done >> status.log
 
 rm /etc/rc.local
 ln -s `pwd`/coder-dojo-potsdam-update-service.sh /etc/rc.local
