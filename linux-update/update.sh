@@ -22,6 +22,7 @@ then
   if [ -d projects ]
   then
     cd projects
+    git add .
     git commit -am"auto commit on `hostname`" &&  ssh-agent bash -c 'ssh-add /home/coderdojo/.ssh/id_rsa; git push'
     cd ..
     chown -R coderdojo projects
