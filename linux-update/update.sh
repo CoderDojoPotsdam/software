@@ -17,10 +17,13 @@ then
   /home/coderdojo/software/linux-update/update_git_repository.sh git@github.com:CoderDojoPotsdam/organize.git organize
   # update the projects repository
   /home/coderdojo/software/linux-update/update_git_repository.sh git@github.com:CoderDojoPotsdam/projects.git projects
-  cd projects
-  git commit -am"auto commit on `hostname`" &&  ssh-agent bash -c 'ssh-add /home/coderdojo/.ssh/id_rsa; git push'
-  cd ..
-  chown -R coderdojo projects
+  if [ -d projects ]
+  then
+    cd projects
+    git commit -am"auto commit on `hostname`" &&  ssh-agent bash -c 'ssh-add /home/coderdojo/.ssh/id_rsa; git push'
+    cd ..
+    chown -R coderdojo projects
+  fi
 fi
 
 # install the software packages
