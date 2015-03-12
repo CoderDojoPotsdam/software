@@ -6,7 +6,7 @@ git log --pretty=oneline -1
 echo
 
 # install git
-echo -n installing git... >> status.log
+echo -n "installing git... " >> status.log
 
 apt-get -y install git
 
@@ -21,7 +21,7 @@ echo done >> status.log
 
 # update the repository
 
-echo -n updating the software repository >> status.log
+echo -n "updating the software repository... " >> status.log
 
 cd /home/coderdojo
 
@@ -41,7 +41,7 @@ chown -R coderdojo .
 
 cd linux-update
 
-echo done >> status.log
-
 rm /etc/rc.local
 ln -s `pwd`/coder-dojo-potsdam-update-service.sh /etc/rc.local
+
+echo done >> status.log

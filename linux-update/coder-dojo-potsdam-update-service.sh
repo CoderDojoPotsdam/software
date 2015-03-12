@@ -18,4 +18,4 @@ touch status.log
 
 ./update.sh >>update.sh.log 2>>update.sh.log
 
-echo ** update complete ** >> status.log
+echo update complete  >> status.log
