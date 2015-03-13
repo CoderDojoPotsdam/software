@@ -45,6 +45,8 @@ echo done >> status.log
 # everything additional should go here
 # -----------------------------------------------------
 cd /home/coderdojo/software/linux-update
+echo ----- additional configuration -----
+echo -n "additional configuration... " >> status.log
 
 ./set_startup_homepage.sh https://zen.coderdojo.com/dojo/861
 
@@ -55,6 +57,7 @@ cd /home/coderdojo/software/linux-update
 
 
 
+echo done >> status.log
 # -----------------------------------------------------
 # update the system
 echo ----- update the system -----
