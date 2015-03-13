@@ -46,7 +46,7 @@ echo done >> status.log
 # -----------------------------------------------------
 cd /home/coderdojo/software/linux-update
 
-./set_default_firefox_homepage.sh https://zen.coderdojo.com/dojo/861
+./set_startup_homepage.sh https://zen.coderdojo.com/dojo/861
 
 
 
