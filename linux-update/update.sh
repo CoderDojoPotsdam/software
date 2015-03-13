@@ -28,10 +28,10 @@ then
     cd ..
     chown -R coderdojo projects
   fi
-  echo failed >> /home/coderdojo/software/linux-update/status.log
+  echo done >> /home/coderdojo/software/linux-update/status.log
 
 else
-  echo done >> /home/coderdojo/software/linux-update/status.log
+  echo failed >> /home/coderdojo/software/linux-update/status.log
 fi
 
 
