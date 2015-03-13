@@ -55,8 +55,6 @@ echo -n "additional configuration... " >> status.log
 
 
 
-
-
 echo done >> status.log
 # -----------------------------------------------------
 # update the system
