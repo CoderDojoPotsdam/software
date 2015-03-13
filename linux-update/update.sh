@@ -41,7 +41,21 @@ cd /home/coderdojo/software/linux-update
 ./install_software.sh
 
 echo done >> status.log
+# -----------------------------------------------------
+# everything additional should go here
+# -----------------------------------------------------
+cd /home/coderdojo/software/linux-update
 
+./set_default_firefox_homepage.sh https://zen.coderdojo.com/dojo/861
+
+
+
+
+
+
+
+
+# -----------------------------------------------------
 # update the system
 echo ----- update the system -----
 echo -n "updating the system... " >> status.log
