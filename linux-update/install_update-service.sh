@@ -1,9 +1,9 @@
 #!/bin/sh
 
-cd /home/coderdojo/software/linux-update
+cd $UPDATE_DIR
 
 #configure autostart
-sudo ln -s --backup `pwd`/coder-dojo-potsdam-update-service.sh /etc/rc.local
+sudo ln -s --backup $UPDATE_DIR/coder-dojo-potsdam-update-service.sh /etc/rc.local
 
 # configure global settings
 git config --global user.email "coderdojopotsdam-discuss@googlegroups.com"

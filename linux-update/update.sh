@@ -8,47 +8,46 @@ echo
 # we can assume an internet connection
 # we run as super user
 
-# assuming that the user name is coderdojo
+# assuming that the user name is the first in the home directory
 # create and update git repositories
-cd /home/coderdojo/software/linux-update
 echo ----- update repositories -----
-echo -n "updating repositories... " >> status.log
-if [ -d /home/coderdojo ]
+echo -n "updating repositories... " >> $UPDATE_STATUS
+if [ -d $UPDATE_HOME ]
 then
-  cd /home/coderdojo
+  cd $UPDATE_HOME
   # update the organize repository
-  /home/coderdojo/software/linux-update/update_git_repository.sh git@github.com:CoderDojoPotsdam/organize.git organize
+  $UPDATE_DIR/update_git_repository.sh git@github.com:CoderDojoPotsdam/organize.git organize
   # update the projects repository
-  /home/coderdojo/software/linux-update/update_git_repository.sh git@github.com:CoderDojoPotsdam/projects.git projects
+  $UPDATE_DIR/update_git_repository.sh git@github.com:CoderDojoPotsdam/projects.git projects
   if [ -d projects ]
   then
     cd projects
     git add .
-    git commit -am"auto commit on `hostname`" &&  ssh-agent bash -c 'ssh-add /home/coderdojo/.ssh/id_rsa; git push'
+    git commit -am"auto commit on $UPDATE_USERNAME@`hostname`" &&  ssh-agent bash -c 'ssh-add /home/*/.ssh/id_rsa; git push'
     cd ..
-    chown -R coderdojo projects
+    chown -R $UPDATE_USERNAME projects
   fi
-  echo done >> /home/coderdojo/software/linux-update/status.log
+  echo done >> $UPDATE_STATUS
 
 else
-  echo failed >> /home/coderdojo/software/linux-update/status.log
+  echo failed >> $UPDATE_STATUS
 fi
 
 
 # install the software packages
-cd /home/coderdojo/software/linux-update
+cd $UPDATE_DIR
 echo ----- install software -----
-echo -n "installing software... " >> status.log
+echo -n "installing software... " >> $UPDATE_STATUS
 
 ./install_software.sh
 
-echo done >> status.log
+echo done >> $UPDATE_STATUS
 # -----------------------------------------------------
 # everything additional should go here
 # -----------------------------------------------------
-cd /home/coderdojo/software/linux-update
+cd $UPDATE_DIR
 echo ----- additional configuration -----
-echo -n "additional configuration... " >> status.log
+echo -n "additional configuration... " >> $UPDATE_STATUS
 
 ./set_startup_homepage.sh https://zen.coderdojo.com/dojo/861
 
@@ -57,28 +56,28 @@ echo -n "additional configuration... " >> status.log
 
 
 
-echo done >> status.log
+echo done >> $UPDATE_STATUS
 # -----------------------------------------------------
 # update the system
-cd /home/coderdojo/software/linux-update
+cd $UPDATE_DIR
 echo ----- update the system -----
-echo -n "updating the system... " >> status.log
+echo -n "updating the system... " >> $UPDATE_STATUS
 # http://stackoverflow.com/questions/3316677/apt-get-update-dist-upgrade-autoremove-autoclean-in-a-single-sudo-command
 apt-get -y -qq update
 apt-get -y -qq dist-upgrade
 apt-get -y -qq autoremove
 apt-get -y -qq autoclean
 
-echo done >> status.log
+echo done >> $UPDATE_STATUS
 
 # install the software packages again
-cd /home/coderdojo/software/linux-update
+cd $UPDATE_DIR
 echo ----- install software again -----
-echo -n "installing software again... " >> status.log
+echo -n "installing software again... " >> $UPDATE_STATUS
 
 ./install_software.sh
 
-echo done >> status.log
+echo done >> $UPDATE_STATUS
 
 
 

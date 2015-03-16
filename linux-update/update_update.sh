@@ -6,7 +6,7 @@ git log --pretty=oneline -1
 echo
 
 # install git
-echo -n "installing git... " >> status.log
+echo -n "installing git... " >> $UPDATE_STATUS
 
 apt-get -y install git
 
@@ -17,31 +17,31 @@ ssh-keygen -R domain.com
 ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 ssh-keyscan -H github.com >> /root/.ssh/known_hosts
 
-echo done >> status.log
+echo done >> $UPDATE_STATUS
 
 # update the repository
 
-echo -n "updating the software repository... " >> status.log
+echo -n "updating the software repository... " >> $UPDATE_STATUS
 
-cd /home/coderdojo
+cd $UPDATE_HOME
 
 # test if directory exists
 # http://www.cyberciti.biz/tips/find-out-if-directory-exists.html
 if [ -d software ]
 then
-  cd software/
-  ssh-agent bash -c 'ssh-add /home/coderdojo/.ssh/id_rsa; git pull'
+  cd $UPDATE_DIR
+  ssh-agent bash -c "ssh-add $UPDATE_HOME/.ssh/id_rsa; git pull"
   
 else 
-  ssh-agent bash -c 'ssh-add /home/coderdojo/.ssh/id_rsa; git clone git@github.com:CoderDojoPotsdam/software.git'
-  cd software/
+  ssh-agent bash -c "ssh-add $UPDATE_HOME/.ssh/id_rsa; git clone git@github.com:CoderDojoPotsdam/software.git"
 fi
 
-chown -R coderdojo .
+chown -R $UPDATE_USERNAME $UPDATE_HOME/software
 
-cd linux-update
+
+cd $UPDATE_DIR
 
 rm /etc/rc.local
-ln -s `pwd`/coder-dojo-potsdam-update-service.sh /etc/rc.local
+ln -s $UPDATE_DIR/coder-dojo-potsdam-update-service.sh /etc/rc.local
 
-echo done >> status.log
+echo done >> $UPDATE_STATUS
