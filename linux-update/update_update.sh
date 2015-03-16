@@ -1,5 +1,6 @@
 #!/bin/sh
 
+cd $UPDATE_DIR
 echo -----------------------------------------------------------------
 date
 git log --pretty=oneline -1

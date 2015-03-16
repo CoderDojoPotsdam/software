@@ -23,8 +23,8 @@ touch $UPDATE_STATUS
 # update the system
 $UPDATE_DIR/wait_for_internet_connection.sh
 
-$UPDATE_DIR/update_update.sh >>update_update.sh.log 2>> "$UPDATE_DIR/update_update.sh.log"
+$UPDATE_DIR/update_update.sh >>"$UPDATE_DIR/update_update.sh.log" 2>>"$UPDATE_DIR/update_update.sh.log"
 
-$UPDATE_DIR/update.sh >>update.sh.log 2>>"$UPDATE_DIR/update.sh.log"
+$UPDATE_DIR/update.sh >>"$UPDATE_DIR/update.sh.log" 2>>"$UPDATE_DIR/update.sh.log"
 
 echo update complete  >> $UPDATE_STATUS
