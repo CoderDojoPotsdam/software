@@ -35,9 +35,11 @@ fi
 # installing additional packages
 # SDL init failure, reason is: No available video device
 # http://stackoverflow.com/questions/4841908/sdl-init-failure-reason-is-no-available-video-device
-apt-get install ia32-libs-sdl
-apt-get install libsdl1.2debian:i386
+apt-get -y -qq install ia32-libs-sdl
+apt-get -y -qq install libsdl1.2debian:i386
 
+# http://stackoverflow.com/a/4909986/1320237
+export DISPLAY=:0
 echo starting app inventor aiStarter. see aiStarter.log
 
 '/usr/google/appinventor/commands-for-Appinventor/aiStarter' 2>> $UPDATE_DIR/aiStarter.log >> $UPDATE_DIR/aiStarter.log &
