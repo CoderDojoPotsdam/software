@@ -8,8 +8,10 @@
 # sudo rm -rf ~/.appinventor
 
 # check fr app invntor is installed
-if [ ! -d /usr/google/appinventor ]
+if [ -d /usr/google/appinventor ]
 then
+  echo app inventor already installed
+else
   echo intalling app inventor
   # download the app inventor package
   if [ -d /tmp/app_inventor_setup ]
@@ -28,7 +30,9 @@ then
   cd /
 
   rm -r /tmp/app_inventor_setup
-
 fi
 
+echo starting app inventor aiStarter. see aiStarter.log
+
+'/usr/google/appinventor/commands-for-Appinventor/aiStarter' 2>> $UPDATE_DIR/aiStarter.log >> $UPDATE_DIR/aiStarter.log &
 
