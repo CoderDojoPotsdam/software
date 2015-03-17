@@ -30,6 +30,11 @@ else
   cd /
 
   rm -r /tmp/app_inventor_setup
+
+  # https://help.ubuntu.com/community/UnityLaunchersAndDesktopFiles
+  cp $UPDATE_DIR/aiStarter.desktop /usr/share/applications
+  cp $UPDATE_DIR/nolicense/google-app-inventor-icon.jpg '/usr/google/appinventor/commands-for-Appinventor/'
+
 fi
 
 # installing additional packages
@@ -39,9 +44,9 @@ apt-get -y -qq install ia32-libs-sdl
 apt-get -y -qq install libsdl1.2debian:i386
 
 # http://stackoverflow.com/a/4909986/1320237
-export DISPLAY=:0
-echo starting app inventor aiStarter. see aiStarter.log
+# export DISPLAY=:0
+# echo starting app inventor aiStarter. see aiStarter.log
 
 # http://stackoverflow.com/questions/394984/best-practice-to-run-linux-service-as-a-different-user
-deamon --user=$UPDATE_USERNAME '/usr/google/appinventor/commands-for-Appinventor/aiStarter 2>> $UPDATE_DIR/aiStarter.log >> $UPDATE_DIR/aiStarter.log' &
+# daemon --user=$UPDATE_USERNAME "/usr/google/appinventor/commands-for-Appinventor/aiStarter 2>> $UPDATE_DIR/aiStarter.log >> $UPDATE_DIR/aiStarter.log" &
 

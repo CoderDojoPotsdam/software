@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=aiStarter
+GenericName=Andriod Emulator for App Inventor
+Exec=/usr/google/appinventor/commands-for-Appinventor/aiStarter >>/tmp/aiStarter.log 2>>/tmp/aiStarter.log &
+Icon=/usr/google/appinventor/commands-for-Appinventor/google-app-inventor-icon.jpg
+Terminal=false
+Categories=Development;Engineering;Mobile;
+Keywords=app inventor;aiStarter

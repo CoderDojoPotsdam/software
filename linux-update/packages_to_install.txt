@@ -33,4 +33,6 @@ blender
 
 ####### tools #######
 synergy
+# app inventor
+daemon
 
