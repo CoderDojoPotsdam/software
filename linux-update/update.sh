@@ -52,7 +52,7 @@ echo -n "additional configuration... " >> $UPDATE_STATUS
 
 ./set_startup_homepage.sh https://zen.coderdojo.com/dojo/861
 
-
+./install_app_inventor.sh
 
 
 
