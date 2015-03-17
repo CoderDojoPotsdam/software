@@ -42,5 +42,6 @@ apt-get -y -qq install libsdl1.2debian:i386
 export DISPLAY=:0
 echo starting app inventor aiStarter. see aiStarter.log
 
-'/usr/google/appinventor/commands-for-Appinventor/aiStarter' 2>> $UPDATE_DIR/aiStarter.log >> $UPDATE_DIR/aiStarter.log &
+# http://stackoverflow.com/questions/394984/best-practice-to-run-linux-service-as-a-different-user
+deamon --user=$UPDATE_USERNAME '/usr/google/appinventor/commands-for-Appinventor/aiStarter 2>> $UPDATE_DIR/aiStarter.log >> $UPDATE_DIR/aiStarter.log' &
 
