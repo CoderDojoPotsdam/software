@@ -53,7 +53,8 @@ echo -n "additional configuration... " >> $UPDATE_STATUS
 ./set_startup_homepage.sh https://zen.coderdojo.com/dojo/861
 
 ./install_app_inventor.sh
-
+./install_opera.sh
+./install_google_chrome.sh
 
 
 

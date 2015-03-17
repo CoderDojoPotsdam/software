@@ -10,7 +10,7 @@
 # check fr app invntor is installed
 if [ -d /usr/google/appinventor ]
 then
-  echo app inventor already installed
+  echo app inventor is already installed
 else
   echo intalling app inventor
   # download the app inventor package
