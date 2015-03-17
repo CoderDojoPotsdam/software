@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-if type opera >>/dev/null 2>>/dev/null
+if type google-chrome >>/dev/null 2>>/dev/null
 then
   echo google chrome is already installed
 else

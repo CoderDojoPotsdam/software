@@ -54,7 +54,6 @@ echo -n "additional configuration... " >> $UPDATE_STATUS
 
 ./install_app_inventor.sh
 ./install_opera.sh
-pwd
 ./install_google_chrome.sh
 
 
