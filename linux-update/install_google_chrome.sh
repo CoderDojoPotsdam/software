@@ -1,4 +1,4 @@
-#!/bin.sh
+#!/bin/sh
 
 
 if type opera >>/dev/null 2>>/dev/null
@@ -17,7 +17,7 @@ else
 
   cd /tmp/google_chrome_setup 
 
-  wget https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
+  wget --quiet https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
 
   cd /
 
