@@ -34,3 +34,5 @@ blender
 ####### tools #######
 synergy
 wireshark
+# WIFI Panel
+gnome-session-flashback
