@@ -1,5 +1,7 @@
 #!/bin/sh
 
+dpkg --configure -a
+
 # we run as super user
 
 UPDATE_USERNAME=`ls /home | head -1`
