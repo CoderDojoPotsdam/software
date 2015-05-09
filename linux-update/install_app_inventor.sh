@@ -31,11 +31,12 @@ else
 
   rm -r /tmp/app_inventor_setup
 
-  # https://help.ubuntu.com/community/UnityLaunchersAndDesktopFiles
-  cp $UPDATE_DIR/aiStarter.desktop /usr/share/applications
-  cp $UPDATE_DIR/nolicense/google-app-inventor-icon.jpg '/usr/google/appinventor/commands-for-Appinventor/'
-
 fi
+
+# https://help.ubuntu.com/community/UnityLaunchersAndDesktopFiles
+cp $UPDATE_DIR/aiStarter.desktop /usr/share/applications
+cp $UPDATE_DIR/nolicense/google-app-inventor-icon.jpg '/usr/google/appinventor/commands-for-Appinventor/'
+
 
 # installing additional packages
 # SDL init failure, reason is: No available video device
