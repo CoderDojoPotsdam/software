@@ -65,3 +65,8 @@ do
     echo
   fi
 done
+
+echo 
+echo Read the README.md file for more information.
+echo You need to restart the computer to start the installation process.
+
