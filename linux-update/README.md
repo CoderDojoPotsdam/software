@@ -1,6 +1,8 @@
 Auto-update functionality for Ubuntu
 ====================================
 
+If you have a fresh Ubuntu installation on your computer and you want to install all the software for the Coder Dojo Potsdam automatically, this is for you.
+
 Installation
 ------------
 
