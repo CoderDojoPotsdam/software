@@ -1,5 +1,7 @@
 #!/bin/sh
 
+./set_environment_variables.sh
+
 cd $UPDATE_DIR
 
 #configure autostart
