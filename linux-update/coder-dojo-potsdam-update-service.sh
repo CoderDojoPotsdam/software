@@ -3,8 +3,16 @@
 dpkg --configure -a
 
 # we run as super user
+# set environment variables
+UPDATE_USERNAME=`ls /home | head -1`
+UPDATE_HOME=/home/$UPDATE_USERNAME/
+UPDATE_DIR=$UPDATE_HOME/software/linux-update/
+UPDATE_STATUS=$UPDATE_DIR/status.log
 
-./set_environment_variables.sh
+export UPDATE_USERNAME
+export UPDATE_HOME
+export UPDATE_DIR
+export UPDATE_STATUS
 
 # create status log
 if [ -f $UPDATE_STATUS ]
