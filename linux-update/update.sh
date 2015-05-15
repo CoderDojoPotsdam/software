@@ -25,7 +25,7 @@ then
     # link arduino files onto projects
     if [ ! -L $UPDATE_HOME/sketchbook ]
     then
-      mv -f $UPDATE_HOME/sketchbook/* $UPDATE_HOME/projects/Arduino
+      mv -f $UPDATE_HOME/sketchbook/* $UPDATE_HOME/projects/Arduino && \
       rm -r $UPDATE_HOME/sketchbook/
     else 
       rm $UPDATE_HOME/sketchbook
@@ -40,7 +40,7 @@ then
         then
           if [ ! -L $folder/"Scratch Projects" ]
           then
-            mv -f $folder/"Scratch Projects"/* $UPDATE_HOME/projects/"Scratch Projects"
+            mv -f $folder/"Scratch Projects"/* $UPDATE_HOME/projects/"Scratch Projects" && \
             rm -r $folder/"Scratch Projects"/
           else
             rm $folder/"Scratch Projects"
