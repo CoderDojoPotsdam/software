@@ -20,6 +20,10 @@ cd /tmp
 # http://askubuntu.com/questions/40779/how-do-i-install-a-deb-file-via-the-command-line
 sudo dpkg -i adobeair_2.6.0.19170-devolo1_i386.deb 
 
+sudo apt-get -f -y install
+
+sudo dpkg -i adobeair_2.6.0.19170-devolo1_i386.deb 
+
 # http://stackoverflow.com/questions/19261098/how-to-run-execute-an-adobe-air-file-on-linux-ec2-ubuntu-from-command-line-onl
 rm /usr/sbin/airinstall
 ln -s "/opt/Adobe AIR/Versions/1.0/Adobe AIR Application Installer" /usr/sbin/airinstall
