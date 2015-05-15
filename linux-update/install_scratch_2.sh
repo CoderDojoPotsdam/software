@@ -9,10 +9,11 @@ apt-get -y install libgnome-keyring0:i386
 cd /tmp
 
 # download adobe air
-if [ ! -f adobeair_2.6.0.19170-devolo1_i386.deb ]
-then
+#if [ ! -f adobeair_2.6.0.19170-devolo1_i386.deb ]
+#then
+  rm adobeair_2.6.0.19170-devolo1_i386.deb
   wget --quiet http://update.devolo.com/linux/apt/pool/main/a/adobeair/adobeair_2.6.0.19170-devolo1_i386.deb
-fi
+#fi
 
 # install adobe air
 # http://askubuntu.com/a/441067
@@ -24,12 +25,13 @@ rm /usr/sbin/airinstall
 ln -s "/opt/Adobe AIR/Versions/1.0/Adobe AIR Application Installer" /usr/sbin/airinstall
 
 # download Scratch 2
-if [ ! -f Scratch-*.air ]
-then 
+#if [ ! -f Scratch-*.air ]
+#then 
   echo Downloading Scratch 2 ... this may take a while.
   echo If you interrupt it, make sure to clean the Scratch file in /tmp.
+  rm Scratch-436.air
   wget --quiet https://scratch.mit.edu/scratchr2/static/sa/Scratch-436.air
-fi
+#fi
 
 echo installing scratch
 
