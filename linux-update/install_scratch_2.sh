@@ -11,7 +11,7 @@ cd /tmp
 # download adobe air
 if [ ! -f adobeair_2.6.0.19170-devolo1_i386.deb ]
 then
-  wget http://update.devolo.com/linux/apt/pool/main/a/adobeair/adobeair_2.6.0.19170-devolo1_i386.deb
+  wget --quiet http://update.devolo.com/linux/apt/pool/main/a/adobeair/adobeair_2.6.0.19170-devolo1_i386.deb
 fi
 
 # install adobe air
@@ -28,7 +28,7 @@ if [ ! -f Scratch-*.air ]
 then 
   echo Downloading Scratch 2 ... this may take a while.
   echo If you interrupt it, make sure to clean the Scratch file in /tmp.
-  wget https://scratch.mit.edu/scratchr2/static/sa/Scratch-436.air
+  wget --quiet https://scratch.mit.edu/scratchr2/static/sa/Scratch-436.air
 fi
 
 echo installing scratch
