@@ -39,6 +39,7 @@ wireshark
 # http://www.debugpoint.com/2014/07/wifinetwork-icon-is-not-showing-in-ubuntu-14-04-lts/
 # http://www.debugpoint.com/2014/08/install-gnome-in-ubuntu-14-04-flashback-metacity-replacing-unity/
 gnome-session-flashback
+realpath
 
 ####### games #######
 moon-buggy
