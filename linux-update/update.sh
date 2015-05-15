@@ -22,6 +22,24 @@ then
   $UPDATE_DIR/update_git_repository.sh git@github.com:CoderDojoPotsdam/projects.git projects
   if [ -d projects ]
   then
+    # link arduino files onto projects
+    if [ ! -L $UPDATE_HOME/sketchbook]
+    then
+      mv -f $UPDATE_HOME/sketchbook/* $UPDATE_HOME/projects/arduino
+      rm -r $UPDATE_HOME/sketchbook/
+    else 
+      rm $UPDATE_HOME/sketchbook
+    fi
+    ln -s $UPDATE_HOME/projects/arduino $UPDATE_HOME/sketchbook
+    # link scratch into projects
+    
+    if [ ! -L $UPDATE_HOME/sketchbook]
+    then
+      mv -f $UPDATE_HOME/sketchbook/* $UPDATE_HOME/projects/arduino
+      rm -r $UPDATE_HOME/sketchbook/
+    fi
+    ln -s $UPDATE_HOME/projects/arduino $UPDATE_HOME/sketchbook
+    # automatically commit and push files of the coders
     cd projects
     git add .
     git commit -am"auto commit on $UPDATE_USERNAME@`hostname`" &&  ssh-agent bash -c 'ssh-add /home/*/.ssh/id_rsa; git push'
