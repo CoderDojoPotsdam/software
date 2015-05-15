@@ -34,9 +34,9 @@ then
     # link scratch into projects
     for folder in { $UPDATE_HOME/* }
     do
-      if [ "`realpath $folder`" != `realpath $UPDATE_HOME/projects` ]
+      if [ "`realpath $folder`" != `realpath $UPDATE_HOME/projects` && -d $folder/"Scratch Projects" ]
       then
-        if [ ! -L $folder/"Scratch Projects"]
+        if [ ! -L $folder/"Scratch Projects" ]
         then
           mv -f $folder/"Scratch Projects"/* $UPDATE_HOME/projects/"Scratch Projects"
           rm -r $folder/"Scratch Projects"/
