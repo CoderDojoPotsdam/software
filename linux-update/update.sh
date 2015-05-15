@@ -30,7 +30,7 @@ then
     else 
       rm $UPDATE_HOME/sketchbook
     fi
-    ln -s $UPDATE_HOME/projects/arduino $UPDATE_HOME/sketchbook
+    ln -s $UPDATE_HOME/projects/Arduino $UPDATE_HOME/sketchbook
     # link scratch into projects
     for folder in { $UPDATE_HOME/* }
     do
@@ -42,6 +42,8 @@ then
           then
             mv -f $folder/"Scratch Projects"/* $UPDATE_HOME/projects/"Scratch Projects"
             rm -r $folder/"Scratch Projects"/
+          else
+            rm $folder/"Scratch Projects"
           fi
           ln -s $UPDATE_HOME/projects/"Scratch Projects" $folder/"Scratch Projects"
         fi
