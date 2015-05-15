@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=IDLE (using Python-2)
+Comment=Integrated Development Environment for Python (using Python-2)
+Exec=python2 -c "import idlelib.IOBinding, os; idlelib.IOBinding.IOBinding.dirname=os.path.join(os.environ['HOME'], 'projects/Python/');import idlelib.idle"
+Icon=/usr/share/pixmaps/python2.xpm
+Terminal=false
+Type=Application
+Categories=Application;Development;
+StartupNotify=true
+
+
+

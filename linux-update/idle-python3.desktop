@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=IDLE (using Python-3)
+Comment=Integrated Development Environment for Python (using Python-3)
+Exec=python3 -c "import idlelib.IOBinding, os; idlelib.IOBinding.IOBinding.dirname=os.path.join(os.environ['HOME'], 'projects/Python/');import idlelib.idle"
+Icon=/usr/share/pixmaps/python3.xpm
+Terminal=false
+Type=Application
+Categories=Application;Development;
+StartupNotify=true
+
+
+
