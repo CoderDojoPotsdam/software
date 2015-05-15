@@ -99,7 +99,7 @@ cp ./idle-python2.desktop /usr/share/applications/
 
 if [ ! -f '/opt'/'Scratch 2'/bin/'Scratch 2' ]
 then
-  cp ./Scratch2Installer.desktop /usr/share/applications/
+  cp ./scratch-2-installer.desktop /usr/share/applications/
   cp ./install_scratch_2.sh /opt/
 fi
 

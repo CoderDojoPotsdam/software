@@ -40,6 +40,7 @@ wireshark
 # http://www.debugpoint.com/2014/08/install-gnome-in-ubuntu-14-04-flashback-metacity-replacing-unity/
 gnome-session-flashback
 realpath
+gksu
 
 ####### games #######
 moon-buggy
