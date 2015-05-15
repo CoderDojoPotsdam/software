@@ -31,6 +31,8 @@ then
   wget https://scratch.mit.edu/scratchr2/static/sa/Scratch-436.air
 fi
 
+echo installing scratch
+
 airinstall `pwd`/Scratch-*.air
 
 
