@@ -26,6 +26,8 @@ ln -s "/opt/Adobe AIR/Versions/1.0/Adobe AIR Application Installer" /usr/sbin/ai
 # download Scratch 2
 if [ ! -f Scratch-*.air ]
 then 
+  echo Downloading Scratch 2 ... this may take a while.
+  echo If you interrupt it, make sure to clean the Scratch file in /tmp.
   wget https://scratch.mit.edu/scratchr2/static/sa/Scratch-436.air
 fi
 
