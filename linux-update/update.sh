@@ -84,6 +84,18 @@ echo -n "additional configuration... " >> $UPDATE_STATUS
 ./install_opera.sh
 ./install_google_chrome.sh
 
+# copy new IDLE launchers
+  # remove old launchers
+rm /usr/share/applications/idle-python3.*.desktop
+rm /usr/share/applications/idle-python2.*.desktop
+  # copy logos
+cp /usr/share/pixmaps/python3.*.xpm /usr/share/pixmaps/python3.xpm
+cp /usr/share/pixmaps/python2.*.xpm /usr/share/pixmaps/python2.xpm
+  # copy launchers
+cp ./idle-python3.desktop /usr/share/applications/
+cp ./idle-python2.desktop /usr/share/applications/
+
+
 
 
 echo done >> $UPDATE_STATUS
