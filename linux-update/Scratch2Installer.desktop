@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Scratch 2 Installer
+Comment=<>
+GenericName=Scratch 2 Installer
+Exec=gksudo /opt/install_scratch_2.sh
+Type=Application
+Terminal=true
+Icon=edu.media.mit.scratch2editor
+StartupNotify=true
+X-KDE-StartupNotify=true
+Categories=Utility;
+X-AppInstall-Package=edu.media.mit.scratch2editor
+X-AppInstall-Section=main
+
