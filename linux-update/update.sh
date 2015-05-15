@@ -34,14 +34,17 @@ then
     # link scratch into projects
     for folder in { $UPDATE_HOME/* }
     do
-      if [ "`realpath $folder`" != `realpath $UPDATE_HOME/projects` && -d $folder/"Scratch Projects" ]
+      if [ "`realpath $folder`" != "`realpath $UPDATE_HOME/projects`" ]
       then
-        if [ ! -L $folder/"Scratch Projects" ]
+        if [ -d $folder/"Scratch Projects" ]
         then
-          mv -f $folder/"Scratch Projects"/* $UPDATE_HOME/projects/"Scratch Projects"
-          rm -r $folder/"Scratch Projects"/
+          if [ ! -L $folder/"Scratch Projects" ]
+          then
+            mv -f $folder/"Scratch Projects"/* $UPDATE_HOME/projects/"Scratch Projects"
+            rm -r $folder/"Scratch Projects"/
+          fi
+          ln -s $UPDATE_HOME/projects/"Scratch Projects" $folder/"Scratch Projects"
         fi
-        ln -s $UPDATE_HOME/projects/"Scratch Projects" $folder/"Scratch Projects"
       fi
     done
     # automatically commit and push files of the coders
