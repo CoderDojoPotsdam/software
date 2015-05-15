@@ -32,13 +32,18 @@ then
     fi
     ln -s $UPDATE_HOME/projects/arduino $UPDATE_HOME/sketchbook
     # link scratch into projects
-    
-    if [ ! -L $UPDATE_HOME/sketchbook]
-    then
-      mv -f $UPDATE_HOME/sketchbook/* $UPDATE_HOME/projects/arduino
-      rm -r $UPDATE_HOME/sketchbook/
-    fi
-    ln -s $UPDATE_HOME/projects/arduino $UPDATE_HOME/sketchbook
+    for folder in { $UPDATE_HOME/* }
+    do
+      if [ "`realpath $folder`" != `realpath $UPDATE_HOME/projects` ]
+      then
+        if [ ! -L $folder/"Scratch Projects"]
+        then
+          mv -f $folder/"Scratch Projects"/* $UPDATE_HOME/projects/"Scratch Projects"
+          rm -r $folder/"Scratch Projects"/
+        fi
+        ln -s $UPDATE_HOME/projects/"Scratch Projects" $folder/"Scratch Projects"
+      fi
+    done
     # automatically commit and push files of the coders
     cd projects
     git add .
