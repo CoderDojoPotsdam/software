@@ -95,8 +95,13 @@ cp /usr/share/pixmaps/python2.*.xpm /usr/share/pixmaps/python2.xpm
 cp ./idle-python3.desktop /usr/share/applications/
 cp ./idle-python2.desktop /usr/share/applications/
 
+# copy Scratch 2 installer files
 
-
+if [ ! -f '/opt'/'Scratch 2'/bin/'Scratch 2' ]
+then
+  cp ./Scratch2Installer.desktop /usr/share/applications/
+  cp ./install_scratch_2.sh /opt/
+fi
 
 echo done >> $UPDATE_STATUS
 # -----------------------------------------------------
