@@ -3,7 +3,8 @@ rem update projects
 cd %HOMEPATH%\projects
 
 git pull origin master
-git commit -am"Autocommit by %USERNAME%@%COMPUTERNAME%"
+git add --all .
+git commit -m"Autocommit by %USERNAME%@%COMPUTERNAME%"
 git push origin master
 
 rem update organize
