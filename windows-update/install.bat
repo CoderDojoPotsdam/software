@@ -29,9 +29,8 @@ git clone git@github.com:CoderDojoPotsdam/projects.git
 git clone git@github.com:CoderDojoPotsdam/software.git
 git clone git@github.com:CoderDojoPotsdam/organize.git
 
-
-
-
+cd %HOMEPATH%\software\windows-update
+call coder-dojo-potsdam-update-service.bat
 
 
 
