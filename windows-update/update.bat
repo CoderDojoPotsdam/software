@@ -32,5 +32,7 @@ mklink /J %githubdir%\organize  %HOMEPATH%\organize
 
 rem link arduino directories
 move %docsdir%\Arduino\libraries  %HOMEPATH%\projects\Arduino\libraries
+rmdir %docsdir%\Arduino
+mklink /J %docsdir%\Arduino %HOMEPATH%\projects\Arduino
 
 
