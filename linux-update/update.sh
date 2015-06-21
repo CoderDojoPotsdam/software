@@ -86,8 +86,8 @@ echo -n "additional configuration... " >> $UPDATE_STATUS
 
 # copy new IDLE launchers
   # remove old launchers
-rm /usr/share/applications/idle-python3.*.desktop
-rm /usr/share/applications/idle-python2.*.desktop
+rm -f /usr/share/applications/idle-python3.*.desktop
+rm -f /usr/share/applications/idle-python2.*.desktop
   # copy logos
 cp /usr/share/pixmaps/python3.*.xpm /usr/share/pixmaps/python3.xpm
 cp /usr/share/pixmaps/python2.*.xpm /usr/share/pixmaps/python2.xpm
@@ -96,16 +96,21 @@ cp ./idle-python3.desktop /usr/share/applications/
 cp ./idle-python2.desktop /usr/share/applications/
 
 # copy Scratch 2 installer files
-
 if [ ! -f '/opt'/'Scratch 2'/bin/'Scratch 2' ]
 then
   cp ./scratch-2-installer.desktop /usr/share/applications/
   cp ./install_scratch_2.sh /opt/
 fi
 
+# create projects link on desktop
+UPDATE_USER_DESKTOP_PATH=`runuser -l $UPDATE_USERNAME -c 'echo $(xdg-user-dir DESKTOP)'`
+rm -f                       $UPDATE_USER_DESKTOP_PATH/'Alles hier speichern.'
+ln -s $UPDATE_HOME/projects $UPDATE_USER_DESKTOP_PATH/'Alles hier speichern.'
+
 echo done >> $UPDATE_STATUS
 # -----------------------------------------------------
 # update the system
+# -----------------------------------------------------
 cd $UPDATE_DIR
 echo ----- update the system -----
 echo -n "updating the system... " >> $UPDATE_STATUS
