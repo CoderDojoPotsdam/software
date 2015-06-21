@@ -1,14 +1,19 @@
+@echo off
 
 cd %~dp0
 
-LOGFILE=update.log
+set LOGFILE=update.log
 
-echo --------------------------------------- >> %LOGFILE%
-date /T >> %LOGFILE%
-time /T >> %LOGFILE%
-
-call update-update.bat >> %LOGFILE%
-
-call update.bat >> %LOGFILE%
+echo.
+echo --------------------------------------- >> %LOGFILE% 2>&1 
+date /T >> %LOGFILE% 2>&1 
+time /T >> %LOGFILE% 2>&1 
 
 
+cd %~dp0
+call update-update.bat >> %LOGFILE% 2>&1 
+
+cd %~dp0
+call update.bat >> %LOGFILE% 2>&1 
+
+cd %~dp0
