@@ -23,10 +23,14 @@ IF NOT EXIST %githubdir% mkdir %githubdir%
 rem link the directories
 mklink /J %docsdir%\projects  %HOMEPATH%\projects
 mklink /J %githubdir%\projects  %HOMEPATH%\projects
-mklink /J %desktopdir%\projects  %HOMEPATH%\projects
+mklink /J %desktopdir%\"Alles hierhin speichern." %HOMEPATH%\projects
 
 mklink /J %githubdir%\software  %HOMEPATH%\software
 
 mklink /J %docsdir%\organize  %HOMEPATH%\organize
 mklink /J %githubdir%\organize  %HOMEPATH%\organize
+
+rem link arduino directories
+move %docsdir%\Arduino\libraries  %HOMEPATH%\projects\Arduino\libraries
+
 
