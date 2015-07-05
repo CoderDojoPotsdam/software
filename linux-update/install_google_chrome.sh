@@ -31,7 +31,8 @@ else
     google_chrome_url=https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
   fi
 
-  wget --quiet $google_chrome_url
+  wget --quiet $google_chrome_url \
+  ||  { echo "failed to download google chrome" ; exit 1; }
 
   cd /
 
