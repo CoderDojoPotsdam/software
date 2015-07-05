@@ -17,7 +17,21 @@ else
 
   cd /tmp/google_chrome_setup 
 
-  wget --quiet https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
+  # find out if amd64 or i386, default to i386
+  if [ -n "`dpkg --get-selections | grep -v deinstall | grep libexif..\\:amd64`" ]
+  then
+    echo "libexif amd64 installed, downloading the amd64 version of google chrome"
+    google_chrome_url=https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  else
+    if [ -z "`dpkg --get-selections | grep -v deinstall | grep libexif..\\:i386`" ]
+    then
+      apt-get -y -q install libexif12:i386
+    fi
+    echo "libexif i386 installed, downloading the i386 version of google chrome"
+    google_chrome_url=https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
+  fi
+
+  wget --quiet $google_chrome_url
 
   cd /
 
