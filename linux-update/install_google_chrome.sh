@@ -17,7 +17,8 @@ else
 
   cd /tmp/google_chrome_setup 
 
-  wget --quiet https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
+  wget --quiet https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb \
+  || { echo "failed to download google chrome" ; exit 1; }
 
   cd /
 
