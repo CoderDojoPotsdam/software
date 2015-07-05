@@ -27,6 +27,13 @@ ruby
 firefox
 flashplugin-installer
 
+# chromium Webbrowser
+# https://wiki.ubuntuusers.de/Chromium/Installation
+chromium-browser 
+chromium-browser-l10n 
+chromium-codecs-ffmpeg 
+chromium-codecs-ffmpeg-extra 
+
 ####### editors #######
 vim
 inkscape
