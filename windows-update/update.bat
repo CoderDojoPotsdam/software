@@ -31,8 +31,13 @@ mklink /J %docsdir%\organize  %HOMEPATH%\organize
 mklink /J %githubdir%\organize  %HOMEPATH%\organize
 
 rem link arduino directories
-move %docsdir%\Arduino\libraries  %HOMEPATH%\projects\Arduino\libraries
-rmdir %docsdir%\Arduino
-mklink /J %docsdir%\Arduino %HOMEPATH%\projects\Arduino
+move /Y "%docsdir%\Arduino\libraries"  "%HOMEPATH%\projects\Arduino\libraries"
+rmdir "%docsdir%\Arduino"
+mklink /J "%docsdir%\Arduino" "%HOMEPATH%\projects\Arduino"
+
+rem link scatch directory
+move /Y "%docsdir%\Scratch Projects\*" "%HOMEPATH%\projects\Scratch Projects"
+rmdir "%docsdir%\Scratch Projects"
+mklink /J "%docsdir%\Scratch Projects" "%HOMEPATH%\projects\Scratch Projects"
 
 
