@@ -105,7 +105,7 @@ fi
 # create projects link on desktop
 # getting the windows directory http://stackoverflow.com/a/4361421/1320237
 # runnning as a different user http://www.cyberciti.biz/open-source/command-line-hacks/linux-run-command-as-different-user/
-UPDATE_USER_DESKTOP_PATH=`runuser -l $UPDATE_USERNAME -c 'echo $(xdg-user-dir DESKTOP)'`
+UPDATE_USER_DESKTOP_PATH=`su $UPDATE_USERNAME -c 'echo $(xdg-user-dir DESKTOP)'`
 rm -f                       $UPDATE_USER_DESKTOP_PATH/'Alles hier speichern.'
 ln -s $UPDATE_HOME/projects $UPDATE_USER_DESKTOP_PATH/'Alles hier speichern.'
 
