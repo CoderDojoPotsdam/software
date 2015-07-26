@@ -52,6 +52,7 @@ wireshark
 gnome-session-flashback
 realpath
 gksu
+curl
 
 ####### games #######
 moon-buggy

@@ -116,6 +116,9 @@ ln -s $UPDATE_HOME/projects $UPDATE_USER_DESKTOP_PATH/'Alles hier speichern.'
 #   https://help.ubuntu.com/community/EnvironmentVariables
 cp ./coder-dojo-profile-script.sh /etc/profile.d
 
+# install Minecraft Forge
+./install_minecraft_forge.sh
+
 echo done >> $UPDATE_STATUS
 # -----------------------------------------------------
 # update the system
