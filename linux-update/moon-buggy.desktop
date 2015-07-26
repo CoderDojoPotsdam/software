@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Moon Buggy
+GenericName=Moon Buggy Console Game
+Comment=moon-buggy
+Exec=moon-buggy
+Terminal=true
+X-KeepTerminal=true
+Type=Application
+Categories=Game;ArcadeGame;
+Keywords=game;buggy;2D:console;race;arcade;
