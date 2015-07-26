@@ -112,6 +112,10 @@ UPDATE_USER_DESKTOP_PATH=`su $UPDATE_USERNAME -c 'echo $(xdg-user-dir DESKTOP)'`
 rm -f                       $UPDATE_USER_DESKTOP_PATH/'Alles hier speichern.'
 ln -s $UPDATE_HOME/projects $UPDATE_USER_DESKTOP_PATH/'Alles hier speichern.'
 
+# add environment scripts to profile directory
+#   https://help.ubuntu.com/community/EnvironmentVariables
+cp ./coder-dojo-profile-script.sh /etc/profile.d
+
 echo done >> $UPDATE_STATUS
 # -----------------------------------------------------
 # update the system
