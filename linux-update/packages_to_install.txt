@@ -31,7 +31,11 @@ flashplugin-installer
 # https://wiki.ubuntuusers.de/Chromium/Installation
 chromium-browser 
 chromium-browser-l10n 
-chromium-codecs-ffmpeg 
+## Die folgenden Pakete haben unerfüllte Abhängigkeiten:
+##  chromium-codecs-ffmpeg : Kollidiert mit: chromium-codecs-ffmpeg-extra aber 43.0.2357.130-0ubuntu0.15.04.1.1174 soll installiert werden
+##  chromium-codecs-ffmpeg-extra : Kollidiert mit: chromium-codecs-ffmpeg aber 43.0.2357.130-0ubuntu0.15.04.1.1174 soll installiert werden
+## E: Probleme können nicht korrigiert werden, Sie haben zurückgehaltene defekte Pakete.
+#chromium-codecs-ffmpeg 
 chromium-codecs-ffmpeg-extra 
 
 ####### editors #######
