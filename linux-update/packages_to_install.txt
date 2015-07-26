@@ -60,4 +60,5 @@ trigger-rally
 extremetuxracer
 extremetuxracer-data
 tuxtype
+tuxmath
 
