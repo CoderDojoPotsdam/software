@@ -62,4 +62,5 @@ extremetuxracer
 extremetuxracer-data
 tuxtype
 tuxmath
+xgalaga
 
