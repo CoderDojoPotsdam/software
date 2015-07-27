@@ -12,7 +12,7 @@ FORGE_URL=http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.10-
 # check if we already completed the setup
 if [ -d $FORGE_DIR ]
 then
-  echo 'Minecraft Forge already installed.'
+  echo "Minecraft Forge already installed at \"$FORGE_DIR\"."
   exit 0
 else
   echo installing Minecraft Forge
@@ -37,8 +37,9 @@ unzip -o -qq $FORGE_ZIP -d $TEMP_FORGE_DIR
 ( cd $TEMP_FORGE_DIR ; ./gradlew eclipse ; ) || { echo "ERROR: 2 gradle error $?" ; exit 4 ; }
 
 rm -rf $FORGE_DIR
+echo deleted $FORGE_DIR, moving $TEMP_FORGE_DIR to $FORGE_DIR
 mv $TEMP_FORGE_DIR $FORGE_DIR
-
+chown -R "$UPDATE_USERNAME" $FORGE_DIR
 
 
 
