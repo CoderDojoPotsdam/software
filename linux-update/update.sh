@@ -119,6 +119,8 @@ cp ./coder-dojo-profile-script.sh /etc/profile.d
 # install Minecraft Forge
 ./install_minecraft_forge.sh
 
+./install_pycharm.sh
+
 echo done >> $UPDATE_STATUS
 # -----------------------------------------------------
 # update the system
