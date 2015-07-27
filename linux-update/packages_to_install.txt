@@ -38,6 +38,8 @@ chromium-browser-l10n
 #chromium-codecs-ffmpeg 
 chromium-codecs-ffmpeg-extra 
 
+opera-stable
+
 ####### editors #######
 vim
 inkscape
