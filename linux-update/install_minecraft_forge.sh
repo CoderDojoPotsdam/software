@@ -34,7 +34,7 @@ unzip -o -qq $FORGE_ZIP -d $TEMP_FORGE_DIR
 ( cd $TEMP_FORGE_DIR ; ./gradlew setupDecompWorkspace --refresh-dependencies ; ) || { echo "ERROR: 1 gradle error $?" ; exit 3 ; }
 
 
-( cd $TEMP_FORGE_DIR ; ./gradlew idea ; ) || { echo "ERROR: 2.1 gradle error $?" ; exit 4 ; }
+# ( cd $TEMP_FORGE_DIR ; ./gradlew idea ; ) || { echo "ERROR: 2.1 gradle error $?" ; exit 4 ; }
 ( cd $TEMP_FORGE_DIR ; ./gradlew eclipse ; ) || { echo "ERROR: 2.2 gradle error $?" ; exit 4 ; }
 
 rm -rf $FORGE_DIR
