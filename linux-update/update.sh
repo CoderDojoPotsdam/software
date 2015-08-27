@@ -117,7 +117,7 @@ ln -s $UPDATE_HOME/projects $UPDATE_USER_DESKTOP_PATH/'Alles hier speichern.'
 cp ./coder-dojo-profile-script.sh /etc/profile.d
 
 # install Minecraft Forge
-./install_minecraft_forge.sh
+su $UPDATE_USERNAME -c './install_minecraft_forge.sh'
 
 ./install_pycharm.sh
 
