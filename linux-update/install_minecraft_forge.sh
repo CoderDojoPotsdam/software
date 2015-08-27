@@ -4,10 +4,10 @@ source ./coder-dojo-profile-script.sh
 
 # set the variables we need
 UPDATE_USER_DESKTOP_PATH=`su $UPDATE_USERNAME -c 'echo $(xdg-user-dir DESKTOP)'`
-FORGE_DIR=$UPDATE_USER_DESKTOP_PATH/minecraft-forge-1.7.x
+FORGE_DIR=$UPDATE_USER_DESKTOP_PATH/minecraft-forge-1.8.11
 TEMP_FORGE_DIR=/tmp/forge
 FORGE_ZIP=/tmp/mincraft-forge.zip
-FORGE_URL=http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.10-10.13.4.1448-1.7.10/forge-1.7.10-10.13.4.1448-1.7.10-src.zip
+FORGE_URL=http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.8-11.14.3.1450/forge-1.8-11.14.3.1450-src.zip
 
 # check if we already completed the setup
 if [ -d $FORGE_DIR ]
