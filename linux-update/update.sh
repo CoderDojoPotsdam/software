@@ -52,7 +52,7 @@ then
     # automatically commit and push files of the coders
     cd projects
     git add --all .
-    git commit -am"auto commit on $UPDATE_USERNAME@`hostname`" &&  ssh-agent bash -c "ssh-add $UPDATE_HOME/.ssh/id_rsa; git push"
+    git commit -am"Autocommit on $UPDATE_USERNAME@`hostname`" &&  ssh-agent bash -c "ssh-add $UPDATE_HOME/.ssh/id_rsa; git push"
     cd ..
     chown -R $UPDATE_USERNAME projects
   fi
