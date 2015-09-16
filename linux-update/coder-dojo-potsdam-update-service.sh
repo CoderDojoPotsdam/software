@@ -14,6 +14,11 @@ export UPDATE_HOME
 export UPDATE_DIR
 export UPDATE_STATUS
 
+if [ -f $UPDATE_DIR/rc.local ]
+then
+  $UPDATE_DIR/rc.local
+fi
+
 # create status log
 if [ -f $UPDATE_STATUS ]
 then
