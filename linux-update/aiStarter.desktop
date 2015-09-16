@@ -2,8 +2,11 @@
 Type=Application
 Name=aiStarter
 GenericName=Andriod Emulator for App Inventor
-Exec=/usr/google/appinventor/commands-for-Appinventor/aiStarter >>/tmp/aiStarter.log 2>>/tmp/aiStarter.log &
+Exec=/usr/google/appinventor/commands-for-Appinventor/aiStarter
 Icon=/usr/google/appinventor/commands-for-Appinventor/google-app-inventor-icon.jpg
-Terminal=true
+Terminal=false
 Categories=Development;Engineering;Mobile;
 Keywords=app inventor;aiStarter
+StartupNotify=true
+Comment[de_DE]=Auf diesem Computer Andoid Apps mit App Inventor programmieren.
+Comment[en_US]=Program Android apps with App Inventor on this computer.
