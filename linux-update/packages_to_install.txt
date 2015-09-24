@@ -6,6 +6,7 @@ arduino
 # python
 idle-python2.7
 idle-python3.4
+idle3
 python
 python3
 python-pip
