@@ -6,6 +6,11 @@ pycharm_temp_folder=/tmp/pycharm
 pycharm_archive=/tmp/pycharm-community-4.5.3.tar.gz
 pycharm_folder=/opt/pycharm
 
+if ! type realpath
+then
+  echo install realpath with \"sudo apt-get install realpath\"!
+fi
+
 if [ -d $pycharm_folder ]
 then
   echo "Pycharm already installed."
