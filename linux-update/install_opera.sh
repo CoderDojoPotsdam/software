@@ -17,6 +17,7 @@ else
   wget -qO - http://deb.opera.com/archive.key | sudo apt-key add -
   
   apt-get -qq update
-  apt-get -y -qq install opera	
+  apt-get -y -qq install libstdc++5 
+  apt-get -y -qq install opera-stable
 
 fi
