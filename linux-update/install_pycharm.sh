@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # all variables we need to configure the script
-pycharm_archive_url=http://download-cf.jetbrains.com/python/pycharm-community-4.5.3.tar.gz
+pycharm_archive_url=https://download.jetbrains.com/python/pycharm-community-5.0.1.tar.gz
 pycharm_temp_folder=/tmp/pycharm
 pycharm_archive=/tmp/pycharm-community-4.5.3.tar.gz
 pycharm_folder=/opt/pycharm
