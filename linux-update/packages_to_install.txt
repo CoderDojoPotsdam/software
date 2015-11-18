@@ -43,6 +43,7 @@ chromium-codecs-ffmpeg-extra
 vim
 inkscape
 blender
+gedit
 
 ####### tools #######
 synergy
