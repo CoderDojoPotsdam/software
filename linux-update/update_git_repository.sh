@@ -30,4 +30,14 @@ else
   echo Error: Git repository $folder_name not found.
 fi
 
+repository_path=$UPDATE_HOME/$folder_name
+link_name=/opt/repositories/$folder_name
+
+mkdir -p /opt/repositories
+if [ ! -L $link_name ]
+then
+  ln -s $repository_path $link_name
+fi
+
+
 

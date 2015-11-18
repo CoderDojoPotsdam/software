@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 cd $UPDATE_DIR
 echo -----------------------------------------------------------------
@@ -49,10 +49,10 @@ then
         fi
       fi
     done
-    # automatically commit and push files of the coders
+    echo automatically commit and push files of the coders
     cd projects
-    git add .
-    git commit -am"auto commit on $UPDATE_USERNAME@`hostname`" &&  ssh-agent bash -c 'ssh-add /home/*/.ssh/id_rsa; git push'
+    git add --all .
+    git commit -am"Autocommit on $UPDATE_USERNAME@`hostname`" &&  ssh-agent bash -c "ssh-add $UPDATE_HOME/.ssh/id_rsa; git push"
     cd ..
     chown -R $UPDATE_USERNAME projects
   fi
@@ -78,7 +78,7 @@ cd $UPDATE_DIR
 echo ----- additional configuration -----
 echo -n "additional configuration... " >> $UPDATE_STATUS
 
-./set_startup_homepage.sh https://zen.coderdojo.com/dojo/861
+./set_startup_homepage.sh https://CoderDojoPotsdam.github.io
 
 ./install_app_inventor.sh
 ./install_opera.sh
@@ -117,7 +117,7 @@ ln -s $UPDATE_HOME/projects $UPDATE_USER_DESKTOP_PATH/'Alles hier speichern.'
 cp ./coder-dojo-profile-script.sh /etc/profile.d
 
 # install Minecraft Forge
-./install_minecraft_forge.sh
+su $UPDATE_USERNAME -c './install_minecraft_forge.sh'
 
 ./install_pycharm.sh
 

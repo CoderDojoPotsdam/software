@@ -33,8 +33,10 @@ apt-get -y -qq install lib32z1 lib32ncurses5 lib32bz2-1.0
 apt-get -y -qq install libgnome-keyring0:i386
 
 # to see the package name, type 
-#  dpkg --get-selections | grep -v uninstall | grep adobeair
-apt-get -y -qq remove adobeair
+if [ -n "`dpkg --get-selections | grep -v uninstall | grep adobeair`" ]
+then
+  apt-get remove adobeair
+fi
 
 # install adobe air
 
@@ -46,7 +48,7 @@ if [ ! -f ${adobe_file} ]
 then
   echo Error: Could not download Adobe Air.
   # http://www.cyberciti.biz/tips/linux-unix-pause-command.html
-  read -p "Press Enter to exit setup."
+  read -p "Press Enter to exit setup." e
   exit 1
 fi
 chmod +x ${adobe_file}
@@ -57,9 +59,11 @@ chmod +x ${adobe_file}
 if [ -z "`uname -a | grep x86_64`" ]
 # install adobe air
 then
+  echo running i386 installation
   LD_LIBRARY_PATH=/usr/lib/i386-linux-gnu ./${adobe_file}
 else
-  LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu ./${adobe_file}
+  echo running amd64 installation
+  LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu ./${adobe_file} || LD_LIBRARY_PATH=/usr/lib/i386-linux-gnu ./${adobe_file}
 fi
 
 # http://stackoverflow.com/questions/19261098/how-to-run-execute-an-adobe-air-file-on-linux-ec2-ubuntu-from-command-line-onl
@@ -74,7 +78,7 @@ if [ ! -f "$scratch_file" ]
 then
   echo Error: Could not download Scratch 2.
   # http://www.cyberciti.biz/tips/linux-unix-pause-command.html
-  read -p "Press Enter to exit setup."
+  read -p "Press Enter to exit setup." e
   exit 1
 fi
 
