@@ -48,7 +48,7 @@ done
 # prepare icons
 if [ ! -f "$destination_path"/hamstersimulator.gif ]
 then
-  wget -q -O "$destination_path"/hamstersimulator.gif 'http://www.java-hamster-modell.de/bilder/bild-home.gif'
+  wget -q -O "$destination_path"/hamstersimulator.gif 'http://www.java-hamster-modell.de/bilder/bild-home.gif' || rm -f "$destination_path"/hamstersimulator.gif
 fi
 
 # create executable and icons

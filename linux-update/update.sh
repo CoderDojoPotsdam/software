@@ -120,6 +120,7 @@ cp ./coder-dojo-profile-script.sh /etc/profile.d
 su $UPDATE_USERNAME -c './install_minecraft_forge.sh'
 
 ./install_pycharm.sh
+./install_hamstermodell.sh
 
 echo done >> $UPDATE_STATUS
 # -----------------------------------------------------
