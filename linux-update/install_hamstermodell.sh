@@ -7,8 +7,8 @@
 #    http://www.linuxjournal.com/content/bash-arrays
 package_urls=('http://www.java-hamster-modell.de/download/v29/hamstersimulator-v29-03-java8.zip' 
               'http://www.java-hamster-modell.de/download/v29/hamstersimulator-v29-01-java7.zip')
-java_versions=('1.7'
-               '1.8')
+java_versions=('1.8'
+               '1.7')
 destination_path='/opt/hamstermodell'
 
 mkdir -p $destination_path
