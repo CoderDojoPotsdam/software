@@ -27,18 +27,18 @@ do
   version_path=$path/VERSION
   version=$url
   download_file="/tmp/hamstersimulator${java_version}.zip"
-  if [! -f $version_path ] || [ "`cat $version_path 2>/dev/null`" != "$version" ]
+  if [ ! -f $version_path ] || [ "`cat $version_path 2>/dev/null`" != "$version" ]
   then
     # version file is different or not existent -> create the file
     rm -rf "$path"
 
     mkdir -p $path
 
-    echo download the file $url
-    wget -q -O "$download_file" "$url" || { echo "Error: could not download ${url}."; continue; }
+    echo downloading the file $url to "$download_file"
+    wget -q -O "$download_file" "$url" || { echo "ERROR: could not download ${url}."; continue; }
 
     echo unpack the archive "$download_file" to "$path"
-    unzip -q "$download_file" -d "$path"
+    unzip -q "$download_file" -d "$path" || { echo "ERROR: could not unpack the archive at $download_file."; continue; }
 
     # this is the last step to verify we did it correctly    
     echo "$version" > "$version_path"

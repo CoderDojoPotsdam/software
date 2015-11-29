@@ -25,10 +25,10 @@ do
 
     # measure time from http://stackoverflow.com/a/22517555
     start_time=$(date -u +"%s")
-    java -jar "$jar_file" 2>>$log_file1>>$log_file
+    java -jar "$jar_file" 2>>$log_file 1>>$log_file
     end_time=$(date -u +"%s")
     # compare from http://stackoverflow.com/a/18668580
-    if (( start_time + 10 < end_time ))
+    if (( start_time + 7 > end_time ))
     then
       notify-send "Could not start the Hamstersimulator. See $log_file for more information or run java -jar \"$jar_file\"."
     fi
