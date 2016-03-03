@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# unlock database in case of shutdown during update
+# from http://www.linuxquestions.org/questions/linux-general-1/dpkg-status-database-is-locked-by-another-process-4175432296-print/
+rm -f /var/lib/dpkg/lock
 dpkg --configure -a
 
 # we run as super user
@@ -20,10 +23,7 @@ then
 fi
 
 # create status log
-if [ -f $UPDATE_STATUS ]
-then
-  rm $UPDATE_STATUS
-fi
+rm -f $UPDATE_STATUS
 touch $UPDATE_STATUS
 
 # update the system
@@ -34,3 +34,5 @@ $UPDATE_DIR/update_update.sh >>"$UPDATE_DIR/update_update.sh.log" 2>>"$UPDATE_DI
 $UPDATE_DIR/update.sh >>"$UPDATE_DIR/update.sh.log" 2>>"$UPDATE_DIR/update.sh.log"
 
 echo update complete  >> $UPDATE_STATUS
+
+exit 0
