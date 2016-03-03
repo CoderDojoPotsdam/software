@@ -57,6 +57,7 @@ gnome-session-flashback
 realpath
 gksu
 curl
+htop
 
 ####### games #######
 moon-buggy
