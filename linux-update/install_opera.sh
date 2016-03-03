@@ -18,6 +18,6 @@ else
   
   apt-get -qq update
   apt-get -y -qq install libstdc++5 
-  apt-get -y -qq install opera-stable
+  echo | apt-get -y -qq install opera-stable
 
 fi
