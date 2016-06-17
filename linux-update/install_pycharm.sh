@@ -15,6 +15,14 @@ fi
 
 if [ -d "$pycharm_folder" ] && [ -f "$pycharm_version_file" ] && [ "`cat \"$pycharm_version_file\"`" == "$pycharm_version" ]
 then
+  echo install icon
+  cp ./jetbrains-pycharm-ce.desktop /usr/share/applications
+  echo link the pycharm projects into projects
+  for user_home in /home/*
+  do
+    rm $user_home/PycharmProjects
+    ln -s "`realpath $UPDATE_HOME/projects/Python`" "$user_home/PycharmProjects"
+  done
   echo "Pycharm already installed."
   exit 0
 fi
@@ -40,16 +48,6 @@ echo unpack pycharm
 
 echo remove the archive so only one folder is left in $pycharm_temp_folder
 rm "$pycharm_archive"
-
-echo install icon
-cp ./jetbrains-pycharm-ce.desktop /usr/share/applications
-
-echo link the pycharm projects into projects
-for user_home in /home/*
-do
-  rm $user_home/PycharmProjects
-  ln -s `realpath $UPDATE_HOME/projects/Python` $user_home/PycharmProjects
-done
 
 echo move everything to $pycharm_folder
 rm -rf "$pycharm_folder"
