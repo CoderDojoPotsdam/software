@@ -7,7 +7,7 @@ log_file=/tmp/hamstersimulator.log
 
 for java_version in `ls /opt/hamstermodell`
 do
-  if java -version 2>&1 | grep -q "java version \"$java_version"
+  if java -version 2>&1 | grep -q "version \"$java_version"
   then
     # found the folder with the java version
     jar_file=`find "/opt/hamstermodell/$java_version" | grep 'hamstersimulator.jar' | head -n1`
