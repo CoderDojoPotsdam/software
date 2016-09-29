@@ -145,6 +145,7 @@ echo -n "installing software again... " >> $UPDATE_STATUS
 ./install_software.sh
 
 echo done >> $UPDATE_STATUS
+echo "----------- update complete -----------"
 
 
 
